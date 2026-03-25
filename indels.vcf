@@ -1,0 +1,39 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##bcftoolsVersion=1.6+htslib-1.6
+##bcftoolsCommand=mpileup -f ../../data/reference_genome/GCF_000017985.1/GCF_000017985.1_ASM1798v1_genomic.fna -Ov -o raw.vcf ../trimmed_reads/aligned_sorted.bam
+##reference=file://../../data/reference_genome/GCF_000017985.1/GCF_000017985.1_ASM1798v1_genomic.fna
+##contig=<ID=NC_012967.1,length=4629812>
+##ALT=<ID=*,Description="Represents allele(s) other than observed.">
+##INFO=<ID=INDEL,Number=0,Type=Flag,Description="Indicates that the variant is an INDEL.">
+##INFO=<ID=IDV,Number=1,Type=Integer,Description="Maximum number of reads supporting an indel">
+##INFO=<ID=IMF,Number=1,Type=Float,Description="Maximum fraction of reads supporting an indel">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Raw read depth">
+##INFO=<ID=VDB,Number=1,Type=Float,Description="Variant Distance Bias for filtering splice-site artefacts in RNA-seq data (bigger is better)",Version="3">
+##INFO=<ID=RPB,Number=1,Type=Float,Description="Mann-Whitney U test of Read Position Bias (bigger is better)">
+##INFO=<ID=MQB,Number=1,Type=Float,Description="Mann-Whitney U test of Mapping Quality Bias (bigger is better)">
+##INFO=<ID=BQB,Number=1,Type=Float,Description="Mann-Whitney U test of Base Quality Bias (bigger is better)">
+##INFO=<ID=MQSB,Number=1,Type=Float,Description="Mann-Whitney U test of Mapping Quality vs Strand Bias (bigger is better)">
+##INFO=<ID=SGB,Number=1,Type=Float,Description="Segregation based metric.">
+##INFO=<ID=MQ0F,Number=1,Type=Float,Description="Fraction of MQ0 reads (smaller is better)">
+##FORMAT=<ID=PL,Number=G,Type=Integer,Description="List of Phred-scaled genotype likelihoods">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##INFO=<ID=ICB,Number=1,Type=Float,Description="Inbreeding Coefficient Binomial test (bigger is better)">
+##INFO=<ID=HOB,Number=1,Type=Float,Description="Bias in the number of HOMs number (smaller is better)">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes for each ALT allele, in the same order as listed">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=DP4,Number=4,Type=Integer,Description="Number of high-quality ref-forward , ref-reverse, alt-forward and alt-reverse bases">
+##INFO=<ID=MQ,Number=1,Type=Integer,Description="Average mapping quality">
+##bcftools_callVersion=1.6+htslib-1.6
+##bcftools_callCommand=call -mv -Ov -o variants.vcf raw.vcf; Date=Fri Mar 20 13:15:13 2026
+##bcftools_viewVersion=1.6+htslib-1.6
+##bcftools_viewCommand=view -v indels variants.vcf; Date=Fri Mar 20 14:59:19 2026
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	../trimmed_reads/aligned_sorted.bam
+NC_012967.1	276	.	AAAAGCCCGCACCTGACAGTGCGGGCTTTTTTTTCGACCAAAG	AAAAG	40.7739	.	INDEL;IDV=8;IMF=0.0888889;DP=90;VDB=0.404441;SGB=-0.651104;MQSB=1;MQ0F=0;ICB=1;HOB=0.5;AC=1;AN=2;DP4=69,13,7,1;MQ=60	GT:PL	0/1:78,0,255
+NC_012967.1	433359	.	CTTTTTTT	CTTTTTTTT	103	.	INDEL;IDV=93;IMF=0.94898;DP=98;VDB=0.00301262;SGB=-0.693147;MQSB=1;MQ0F=0;AC=2;AN=2;DP4=2,11,33,52;MQ=60	GT:PL	1/1:130,137,0
+NC_012967.1	473901	.	CCGC	CCGCGC	228	.	INDEL;IDV=92;IMF=0.958333;DP=96;VDB=0.941013;SGB=-0.693147;MQSB=1;MQ0F=0;AC=2;AN=2;DP4=5,7,29,55;MQ=60	GT:PL	1/1:255,121,0
+NC_012967.1	2103887	.	ACAGCCAGCCAGCCAGCCAGCCAGCCAGCCAG	ACAGCCAGCCAGCCAGCCAGCCAGCCAGCCAGCCAGCCAGCCAGCCAGCCAGCCAG	222	.	INDEL;IDV=16;IMF=0.5;DP=32;VDB=0.765805;SGB=-0.690438;MQSB=1;MQ0F=0;ICB=1;HOB=0.5;AC=1;AN=2;DP4=9,6,4,13;MQ=60	GT:PL	0/1:255,0,255
+NC_012967.1	2333538	.	AT	ATT	228	.	INDEL;IDV=97;IMF=0.95098;DP=102;VDB=0.0550458;SGB=-0.693147;MQSB=1;MQ0F=0;AC=2;AN=2;DP4=3,12,48,39;MQ=60	GT:PL	1/1:255,98,0
+NC_012967.1	3901455	.	A	AC	173	.	INDEL;IDV=13;IMF=1;DP=13;VDB=4.02747e-08;SGB=-0.683931;MQ0F=0;AC=2;AN=2;DP4=0,0,13,0;MQ=60	GT:PL	1/1:203,39,0
+NC_012967.1	4431391	.	AGTG	AG	63	.	INDEL;IDV=1;IMF=0.0104167;DP=96;VDB=0.376015;SGB=-0.693147;MQSB=1;MQ0F=0;ICB=1;HOB=0.5;AC=1;AN=2;DP4=14,20,33,29;MQ=60	GT:PL	0/1:96,0,255
+NC_012967.1	4431393	.	TGG	T	228	.	INDEL;IDV=91;IMF=0.947917;DP=96;VDB=0.394766;SGB=-0.693147;MQSB=1;MQ0F=0;AC=2;AN=2;DP4=3,11,44,38;MQ=60	GT:PL	1/1:255,72,0

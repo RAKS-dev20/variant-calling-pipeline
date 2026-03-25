@@ -1,0 +1,55 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##bcftoolsVersion=1.6+htslib-1.6
+##bcftoolsCommand=mpileup -f ../../data/reference_genome/GCF_000017985.1/GCF_000017985.1_ASM1798v1_genomic.fna -Ov -o raw.vcf ../trimmed_reads/aligned_sorted.bam
+##reference=file://../../data/reference_genome/GCF_000017985.1/GCF_000017985.1_ASM1798v1_genomic.fna
+##contig=<ID=NC_012967.1,length=4629812>
+##ALT=<ID=*,Description="Represents allele(s) other than observed.">
+##INFO=<ID=INDEL,Number=0,Type=Flag,Description="Indicates that the variant is an INDEL.">
+##INFO=<ID=IDV,Number=1,Type=Integer,Description="Maximum number of reads supporting an indel">
+##INFO=<ID=IMF,Number=1,Type=Float,Description="Maximum fraction of reads supporting an indel">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Raw read depth">
+##INFO=<ID=VDB,Number=1,Type=Float,Description="Variant Distance Bias for filtering splice-site artefacts in RNA-seq data (bigger is better)",Version="3">
+##INFO=<ID=RPB,Number=1,Type=Float,Description="Mann-Whitney U test of Read Position Bias (bigger is better)">
+##INFO=<ID=MQB,Number=1,Type=Float,Description="Mann-Whitney U test of Mapping Quality Bias (bigger is better)">
+##INFO=<ID=BQB,Number=1,Type=Float,Description="Mann-Whitney U test of Base Quality Bias (bigger is better)">
+##INFO=<ID=MQSB,Number=1,Type=Float,Description="Mann-Whitney U test of Mapping Quality vs Strand Bias (bigger is better)">
+##INFO=<ID=SGB,Number=1,Type=Float,Description="Segregation based metric.">
+##INFO=<ID=MQ0F,Number=1,Type=Float,Description="Fraction of MQ0 reads (smaller is better)">
+##FORMAT=<ID=PL,Number=G,Type=Integer,Description="List of Phred-scaled genotype likelihoods">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##INFO=<ID=ICB,Number=1,Type=Float,Description="Inbreeding Coefficient Binomial test (bigger is better)">
+##INFO=<ID=HOB,Number=1,Type=Float,Description="Bias in the number of HOMs number (smaller is better)">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes for each ALT allele, in the same order as listed">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=DP4,Number=4,Type=Integer,Description="Number of high-quality ref-forward , ref-reverse, alt-forward and alt-reverse bases">
+##INFO=<ID=MQ,Number=1,Type=Integer,Description="Average mapping quality">
+##bcftools_callVersion=1.6+htslib-1.6
+##bcftools_callCommand=call -mv -Ov -o variants.vcf raw.vcf; Date=Fri Mar 20 13:15:13 2026
+##bcftools_filterVersion=1.6+htslib-1.6
+##bcftools_filterCommand=filter -i QUAL>30 variants.vcf; Date=Fri Mar 20 15:02:41 2026
+##bcftools_viewVersion=1.6+htslib-1.6
+##bcftools_viewCommand=view -v snps filtered.vcf; Date=Fri Mar 20 15:06:36 2026
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	../trimmed_reads/aligned_sorted.bam
+NC_012967.1	9972	.	T	G	225	PASS	DP=106;VDB=0.944474;SGB=-0.693147;MQSB=1;MQ0F=0;AC=2;AN=2;DP4=0,0,33,62;MQ=60	GT:PL	1/1:255,255,0
+NC_012967.1	263235	.	G	T	228	PASS	DP=90;VDB=0.00243713;SGB=-0.693147;RPB=0.870966;MQB=2.3674e-12;MQSB=0.184321;BQB=1.95042e-05;MQ0F=0.322222;AC=2;AN=2;DP4=19,10,19,29;MQ=24	GT:PL	1/1:255,20,0
+NC_012967.1	281923	.	G	T	225	PASS	DP=83;VDB=0.00381672;SGB=-0.693147;MQSB=1;MQ0F=0;AC=2;AN=2;DP4=0,0,46,27;MQ=60	GT:PL	1/1:255,220,0
+NC_012967.1	377000	.	T	G	228	PASS	DP=88;VDB=0.853325;SGB=-0.693147;RPB=0.321443;MQB=6.47816e-11;MQSB=0.152514;BQB=0.161513;MQ0F=0.261364;AC=2;AN=2;DP4=19,4,27,24;MQ=27	GT:PL	1/1:255,34,0
+NC_012967.1	648692	.	C	T	225	PASS	DP=102;VDB=0.342482;SGB=-0.693147;MQSB=1;MQ0F=0;AC=2;AN=2;DP4=0,0,67,23;MQ=60	GT:PL	1/1:255,255,0
+NC_012967.1	1331794	.	C	A	225	PASS	DP=62;VDB=0.257625;SGB=-0.693147;MQSB=1;MQ0F=0;AC=2;AN=2;DP4=0,0,30,25;MQ=60	GT:PL	1/1:255,166,0
+NC_012967.1	1733343	.	G	A	225	PASS	DP=123;VDB=0.998628;SGB=-0.693147;MQSB=1;MQ0F=0;AC=2;AN=2;DP4=0,0,53,57;MQ=60	GT:PL	1/1:255,255,0
+NC_012967.1	2407766	.	A	C	228	PASS	DP=85;VDB=0.0474878;SGB=-0.693147;RPB=0.0149802;MQB=1.44547e-11;MQSB=0.765916;BQB=0.409604;MQ0F=0.305882;AC=2;AN=2;DP4=19,7,29,19;MQ=25	GT:PL	1/1:255,23,0
+NC_012967.1	2446984	.	A	C	225	PASS	DP=121;VDB=0.259749;SGB=-0.693147;MQSB=0.984995;MQ0F=0;AC=2;AN=2;DP4=0,0,51,55;MQ=59	GT:PL	1/1:255,255,0
+NC_012967.1	2618472	.	G	T	228	PASS	DP=106;VDB=0.0481837;SGB=-0.693147;RPB=0.00886088;MQB=1.60351e-12;MQSB=0.561277;BQB=0.000431699;MQ0F=0.254717;AC=2;AN=2;DP4=17,10,27,30;MQ=27	GT:PL	1/1:255,34,0
+NC_012967.1	2665639	.	A	T	225	PASS	DP=122;VDB=0.997656;SGB=-0.693147;MQSB=1;MQ0F=0;AC=2;AN=2;DP4=0,0,64,46;MQ=60	GT:PL	1/1:255,255,0
+NC_012967.1	2999330	.	G	A	225	PASS	DP=112;VDB=0.806025;SGB=-0.693147;MQSB=1;MQ0F=0;AC=2;AN=2;DP4=0,0,56,42;MQ=60	GT:PL	1/1:255,255,0
+NC_012967.1	3339313	.	A	C	225	PASS	DP=117;VDB=0.82487;SGB=-0.693147;MQSB=1;MQ0F=0;AC=2;AN=2;DP4=0,0,37,66;MQ=60	GT:PL	1/1:255,255,0
+NC_012967.1	3401754	.	C	A	225	PASS	DP=114;VDB=0.0304246;SGB=-0.693147;MQSB=1;MQ0F=0;AC=2;AN=2;DP4=0,0,45,57;MQ=60	GT:PL	1/1:255,255,0
+NC_012967.1	3481820	.	A	G	225	PASS	DP=86;VDB=0.998181;SGB=-0.693147;MQSB=1;MQ0F=0;AC=2;AN=2;DP4=0,0,36,40;MQ=60	GT:PL	1/1:255,229,0
+NC_012967.1	3488669	.	A	C	225	PASS	DP=90;VDB=0.135573;SGB=-0.693147;MQSB=1;MQ0F=0;AC=2;AN=2;DP4=0,0,49,23;MQ=60	GT:PL	1/1:255,217,0
+NC_012967.1	3909807	.	G	T	225	PASS	DP=100;VDB=0.147992;SGB=-0.693147;MQSB=1;MQ0F=0;AC=2;AN=2;DP4=0,0,38,50;MQ=60	GT:PL	1/1:255,255,0
+NC_012967.1	4017756	.	C	T	127	PASS	DP=6;VDB=0.000672183;SGB=-0.616816;MQSB=0.25;MQ0F=0;AC=2;AN=2;DP4=0,0,2,4;MQ=54	GT:PL	1/1:157,18,0
+NC_012967.1	4100183	.	A	G	225	PASS	DP=107;VDB=0.994139;SGB=-0.693147;MQSB=1;MQ0F=0;AC=2;AN=2;DP4=0,0,50,41;MQ=60	GT:PL	1/1:255,255,0
+NC_012967.1	4201958	.	A	C	225	PASS	DP=84;VDB=0.0140001;SGB=-0.693147;MQSB=1;MQ0F=0;AC=2;AN=2;DP4=0,0,39,36;MQ=60	GT:PL	1/1:255,226,0
+NC_012967.1	4504217	.	G	A	53	PASS	DP=230;VDB=0.996074;SGB=-0.692562;RPB=0.345824;MQB=0.974047;MQSB=0.998435;BQB=0.00181781;MQ0F=0;ICB=1;HOB=0.5;AC=1;AN=2;DP4=58,108,9,13;MQ=59	GT:PL	0/1:89,0,255
+NC_012967.1	4616538	.	A	C	225	PASS	DP=107;VDB=0.221708;SGB=-0.693147;MQSB=1;MQ0F=0;AC=2;AN=2;DP4=0,0,44,48;MQ=60	GT:PL	1/1:255,255,0
